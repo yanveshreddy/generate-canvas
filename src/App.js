@@ -1,8 +1,29 @@
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import immg from "./assets/laptop.jpg";
 import html2canvas from "html2canvas";
 
 function App() {
+  const [values, setValues] = useState({});
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (event) => {
+    event.persist();
+    setValues((values) => ({
+      ...values,
+      [event.target.name]: event.target.value,
+    }));
+  };
+
+  useEffect(() => {
+    // setErrors(validate(values));
+    // if (Object.keys(errors).length === 0 && isSubmitting) {
+    // }
+  }, [values]);
+
+  const handleGenerateClick = () => {};
+
   function downloadimage() {
     //var container = document.getElementById("image-wrap"); //specific element on page
     var container = document.getElementById("canvas-content"); // full page
@@ -25,23 +46,38 @@ function App() {
               type="text"
               className="custom-input"
               placeholder="Job Title"
+              name="jobTitle"
+              value={values.jobTitle}
+              onChange={handleChange}
             />
             <input
               type="text"
               className="custom-input"
               placeholder="Company Name"
+              name="companyName"
+              value={values.companyName}
+              onChange={handleChange}
             />
             <input
               type="text"
               className="custom-input"
               placeholder="Location"
+              name="location"
+              value={values.location}
+              onChange={handleChange}
             />
-            <input
+            <textarea
               type="text"
               className="custom-input"
               placeholder="Description"
-            />
-            <button className="btn btn-white align-self-center mt-3">
+              name="description"
+              value={values.description}
+              onChange={handleChange}
+            ></textarea>
+            <button
+              onClick={handleGenerateClick}
+              className="btn btn-white align-self-center mt-3"
+            >
               Generate
             </button>
           </div>
@@ -52,20 +88,17 @@ function App() {
           <div id="canvas-content" className="canvas-card">
             <img src={immg} className="card-image" alt="" />
             <div className="d-flex flex-column justify-content-center align-items-center">
-              <h3>Full Stack Developer</h3>
+              <h3>{values.jobTitle}</h3>
               <div className="d-flex flex-row">
-                <p>Bangalore</p>
+                <p>{values.location}</p>
                 <p>.</p>
-                <p>Swiggy</p>
+                <p>{values.companyName}</p>
               </div>
             </div>
             <hr />
             <div className="p-3">
               <h4>Responsibilities</h4>
-              <p>
-                To build next level web applications which are effiecient
-                reusable
-              </p>
+              <p>{values.description}</p>
             </div>
           </div>
           <div className="custom-button" onClick={downloadimage}>

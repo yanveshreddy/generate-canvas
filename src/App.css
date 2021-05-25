@@ -2,37 +2,78 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg-container {
+  height: 100vh;
+}
+.form-part {
+  height: 100%;
+  background-color: #1f212b;
+  color: #f7f7f7;
+  text-align: center;
+  padding: 0%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.canvas-part {
+  height: 100%;
+  background-color: #f7f7f7;
+  padding: 0%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.custom-input {
+  background-color: transparent;
   color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: 0.5px solid #f7f7f7;
+  margin: 12px;
+  /* box-shadow: white; */
+  width: 70%;
+  align-self: center;
+  border-radius: 6px;
 }
-
-.App-link {
-  color: #61dafb;
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #f7f7f7;
+  opacity: 1; /* Firefox */
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.canvas-card {
+  background-color: #fffdfd;
+  width: 70%;
+  height: 70vh;
+  border-radius: 16px;
+}
+.card-image {
+  width: 100%;
+  height: 20%;
+  /* height: 20vh; */
+  /* background-size: cover; */
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.custom-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #225956;
+  color: #f7f7f7;
+  margin-top: 32px;
+  border: none;
+  padding: 12px;
+  width: 180px;
+  cursor: pointer;
+}
+.down-arrow {
+  align-self: flex-end;
+  padding-right: 8px;
+}
+.cta-text {
+  margin: 0%;
+  /* margin-block-start: 0%;
+  margin-block-end: 0%; */
+  font-size: 20px;
+  align-self: flex-start;
 }

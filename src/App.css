@@ -67,7 +67,7 @@
   padding: 12px;
   width: 180px;
   cursor: pointer;
-  box-shadow: 5px 5px 5px #225956;
+  box-shadow: 2px 2px 2px #225956;
   border-radius: 8px;
 }
 .custom-button:hover {
@@ -108,4 +108,29 @@ p {
   color: #000000;
   font-weight: 500;
   opacity: 0.8;
+}
+
+@media screen and (max-width: 1024px) {
+  .job-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+  }
+  .location {
+    font-size: 18px;
+    color: #000000;
+    opacity: 0.9;
+    font-weight: 600;
+  }
+  .job-description-heading {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+  }
+  .job-description {
+    font-size: 16px;
+    color: #000000;
+    font-weight: 500;
+    opacity: 0.8;
+  }
 }

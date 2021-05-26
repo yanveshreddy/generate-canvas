@@ -37,7 +37,7 @@ function App() {
       .toJpeg(document.getElementById("canvas-content"), { quality: 0.95 })
       .then(function (dataUrl) {
         var link = document.createElement("a");
-        link.download = "my-image-name.jpeg";
+        link.download = "job-details.jpeg";
         link.href = dataUrl;
         link.click();
       });
@@ -109,10 +109,10 @@ function App() {
         <div className="d-flex flex-column justify-content-center align-items-center canvas-part">
           <div id="canvas-content" className="canvas-card">
             <img src={immg} className="card-image" alt="" />
-            <div className="d-flex flex-column justify-content-center align-items-center">
-              <h3 className="job-title">{values.jobTitle}</h3>
+            <div className="d-flex flex-column justify-content-center align-items-center mt-3 mb-3">
+              <h3 className="job-title">{values.jobTitle || "<jobtitle>"}</h3>
               <div className="d-flex flex-row justify-content-center">
-                <p className="location">{values.companyName}</p>
+                <p className="location">{values.companyName || "<company>"}</p>
 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -124,13 +124,15 @@ function App() {
                 >
                   <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
                 </svg>
-                <p className="location">{values.location}</p>
+                <p className="location">{values.location || "<location>"}</p>
               </div>
             </div>
             <hr />
             <div className="p-3">
               <h4 className="job-description-heading">Job Description:</h4>
-              <p className="job-description">{values.description}</p>
+              <p className="job-description">
+                {values.description || "<job description>"}
+              </p>
             </div>
           </div>
           <div className="custom-button" onClick={downloadimage}>

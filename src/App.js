@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import immg from "./assets/laptop.jpg";
+import immg from "./assets/laptop-small.jpeg";
 import html2canvas from "html2canvas";
 import domtoimage from "dom-to-image";
 

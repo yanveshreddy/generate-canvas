@@ -89,6 +89,13 @@ function App() {
               value={values.description}
               onChange={handleChange}
             ></textarea>
+
+            {/* <div className="form-outline custom-input">
+              <input type="text" id="form1" className="form-control " />
+              <label className="form-label " for="form1">
+                Example label
+              </label>
+            </div> */}
             {/* <button
               onClick={handleGenerateClick}
               className="btn btn-white align-self-center mt-3"
@@ -103,25 +110,35 @@ function App() {
           <div id="canvas-content" className="canvas-card">
             <img src={immg} className="card-image" alt="" />
             <div className="d-flex flex-column justify-content-center align-items-center">
-              <h3>{values.jobTitle}</h3>
-              <div className="d-flex flex-row">
-                <p>{values.location}</p>
-                <p>.</p>
-                <p>{values.companyName}</p>
+              <h3 className="job-title">{values.jobTitle}</h3>
+              <div className="d-flex flex-row justify-content-center">
+                <p className="location">{values.companyName}</p>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="#000000"
+                  className="bi bi-dot align-self-center"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                </svg>
+                <p className="location">{values.location}</p>
               </div>
             </div>
             <hr />
             <div className="p-3">
-              <h4>Responsibilities</h4>
-              <p>{values.description}</p>
+              <h4 className="job-description-heading">Job Description:</h4>
+              <p className="job-description">{values.description}</p>
             </div>
           </div>
           <div className="custom-button" onClick={downloadimage}>
             <div className="down-arrow">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="18"
+                height="18"
                 fill="#f7f7f7"
                 className="bi bi-arrow-down-circle"
                 viewBox="0 0 16 16"

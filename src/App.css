@@ -41,10 +41,12 @@
   margin-bottom: 12px;
 }
 .canvas-card {
-  background-color: #fffdfd;
+  background-color: #f2f2fd;
   width: 70%;
   height: 70vh;
   border-radius: 16px;
+  border: 1px solid #bfbfbf;
+  box-shadow: 20px 20px 20px #f7f7f7;
 }
 .card-image {
   width: 100%;
@@ -65,6 +67,11 @@
   padding: 12px;
   width: 180px;
   cursor: pointer;
+  box-shadow: 5px 5px 5px #225956;
+  border-radius: 8px;
+}
+.custom-button:hover {
+  box-shadow: none;
 }
 .down-arrow {
   align-self: flex-end;
@@ -76,4 +83,29 @@
   margin-block-end: 0%; */
   font-size: 20px;
   align-self: flex-start;
+}
+p {
+  margin: 0%;
+}
+.job-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+}
+.location {
+  font-size: 22px;
+  color: #000000;
+  opacity: 0.9;
+  font-weight: 600;
+}
+.job-description-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+}
+.job-description {
+  font-size: 20px;
+  color: #000000;
+  font-weight: 500;
+  opacity: 0.8;
 }

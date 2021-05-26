@@ -22,7 +22,7 @@ function App() {
     // }
   }, [values]);
 
-  const handleGenerateClick = () => {};
+  // const handleGenerateClick = () => {};
 
   function downloadimage() {
     //var container = document.getElementById("image-wrap"); //specific element on page
@@ -74,12 +74,12 @@ function App() {
               value={values.description}
               onChange={handleChange}
             ></textarea>
-            <button
+            {/* <button
               onClick={handleGenerateClick}
               className="btn btn-white align-self-center mt-3"
             >
               Generate
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

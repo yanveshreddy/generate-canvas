@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import immg from "./assets/laptop.jpg";
 import html2canvas from "html2canvas";
+import domtoimage from "dom-to-image";
 
 function App() {
   const [values, setValues] = useState({});
@@ -26,15 +27,29 @@ function App() {
 
   function downloadimage() {
     //var container = document.getElementById("image-wrap"); //specific element on page
+    // if (window.innerWidth < 1024) {
+    //   document
+    //     .getElementById("viewport")
+    //     .setAttribute("content", "width=1200px");
+    // }
     var container = document.getElementById("canvas-content"); // full page
-    html2canvas(container, { allowTaint: true }).then(function (canvas) {
-      var link = document.createElement("a");
-      document.body.appendChild(link);
-      link.download = "job-details.jpg";
-      link.href = canvas.toDataURL();
-      link.target = "_blank";
-      link.click();
-    });
+    domtoimage
+      .toJpeg(document.getElementById("canvas-content"), { quality: 0.95 })
+      .then(function (dataUrl) {
+        var link = document.createElement("a");
+        link.download = "my-image-name.jpeg";
+        link.href = dataUrl;
+        link.click();
+      });
+
+    // html2canvas(container, { allowTaint: true }).then(function (canvas) {
+    //   var link = document.createElement("a");
+    //   document.body.appendChild(link);
+    //   link.download = "job-details.jpg";
+    //   link.href = canvas.toDataURL();
+    //   link.target = "_blank";
+    //   link.click();
+    // });
   }
   return (
     <div className="row bg-container">
@@ -112,7 +127,7 @@ function App() {
                 viewBox="0 0 16 16"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"
                 />
               </svg>

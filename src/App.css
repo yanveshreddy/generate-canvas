@@ -25,15 +25,13 @@
   font-size: 16px;
   border: 0.5px solid #f7f7f7;
   margin: 12px;
-  /* box-shadow: white; */
   width: 70%;
   align-self: center;
   border-radius: 6px;
 }
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #f7f7f7;
-  opacity: 1; /* Firefox */
+  opacity: 1;
 }
 .form-heading {
   font-size: 32px;
@@ -50,9 +48,6 @@
 }
 .card-image {
   width: 100%;
-  /* height: 30%; */
-  /* height: 20vh; */
-  /* background-size: cover; */
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
 }
@@ -79,8 +74,6 @@
 }
 .cta-text {
   margin: 0%;
-  /* margin-block-start: 0%;
-  margin-block-end: 0%; */
   font-size: 20px;
   align-self: flex-start;
 }

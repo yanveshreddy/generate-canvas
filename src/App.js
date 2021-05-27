@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import immg from "./assets/laptop-small.jpeg";
-import html2canvas from "html2canvas";
+// import html2canvas from "html2canvas";
 import domtoimage from "dom-to-image";
 
 function App() {
   const [values, setValues] = useState({});
-  const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (event) => {
     event.persist();
@@ -17,22 +15,9 @@ function App() {
     }));
   };
 
-  useEffect(() => {
-    // setErrors(validate(values));
-    // if (Object.keys(errors).length === 0 && isSubmitting) {
-    // }
-  }, [values]);
-
-  // const handleGenerateClick = () => {};
+  useEffect(() => {}, [values]);
 
   function downloadimage() {
-    //var container = document.getElementById("image-wrap"); //specific element on page
-    // if (window.innerWidth < 1024) {
-    //   document
-    //     .getElementById("viewport")
-    //     .setAttribute("content", "width=1200px");
-    // }
-    var container = document.getElementById("canvas-content"); // full page
     domtoimage
       .toJpeg(document.getElementById("canvas-content"), { quality: 0.95 })
       .then(function (dataUrl) {
@@ -41,15 +26,6 @@ function App() {
         link.href = dataUrl;
         link.click();
       });
-
-    // html2canvas(container, { allowTaint: true }).then(function (canvas) {
-    //   var link = document.createElement("a");
-    //   document.body.appendChild(link);
-    //   link.download = "job-details.jpg";
-    //   link.href = canvas.toDataURL();
-    //   link.target = "_blank";
-    //   link.click();
-    // });
   }
   return (
     <div className="row bg-container">
@@ -90,12 +66,6 @@ function App() {
               onChange={handleChange}
             ></textarea>
 
-            {/* <div className="form-outline custom-input">
-              <input type="text" id="form1" className="form-control " />
-              <label className="form-label " for="form1">
-                Example label
-              </label>
-            </div> */}
             {/* <button
               onClick={handleGenerateClick}
               className="btn btn-white align-self-center mt-3"
